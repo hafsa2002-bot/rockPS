@@ -7,13 +7,14 @@
 </head>
 <body>
     <script>
+        let humanScore = 0;
+        let computerScore = 0;
         function getComputerChoice(){
             value = Math.floor(Math.random() * 3);
             if (value == 0) return "rock";
             else if(value == 1) return "paper";
             else if(value == 2)return "scissors";
         }
-        console.log(getComputerChoice());
 
         function getHumanChoice(){
             let choice = prompt("Enter your choice", "rock OR paper OR scissors");
@@ -23,7 +24,14 @@
             }
             return c;
         }
-        console.log(getComputerChoice());
+        function playRound(humanC, computerC){
+            if((humanC == "rock" && computerC == "scissors") || (humanC == "paper" && computerC == "rock") || (humanC == "scissors" && computerC == "paper")){
+                humanScore++ ;
+            }
+            else if((computerC == "rock" && humanC == "scissors") || (computerC == "paper" && humanC == "rock") || (computerC == "scissors" && humanC == "paper")){
+                computerScore++;
+            }
+        }
     </script>
 </body>
 </html>
