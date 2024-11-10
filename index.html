@@ -14,6 +14,16 @@
             else if(value == 2)return "scissors";
         }
         console.log(getComputerChoice());
+
+        function getHumanChoice(){
+            let choice = prompt("Enter your choice", "rock OR paper OR scissors");
+            let c = choice.toLowerCase();
+            if(c != "rock" && c != "paper" && c != "scissors"){
+                return "choose one of the three choices";
+            }
+            return c;
+        }
+        console.log(getComputerChoice());
     </script>
 </body>
 </html>
