@@ -24,6 +24,7 @@
             }
             return c;
         }
+
         function playRound(humanC, computerC){
             if((humanC == "rock" && computerC == "scissors") || (humanC == "paper" && computerC == "rock") || (humanC == "scissors" && computerC == "paper")){
                 humanScore++ ;
@@ -32,6 +33,28 @@
                 computerScore++;
             }
         }
+
+        function playGame(){
+            for(let i = 0; i < 5; i++){
+                const humanSelection = getHumanChoice();
+                const computerSelection = getComputerChoice();
+                playRound(humanSelection, computerSelection);
+                console.log(humanSelection);
+                console.log(computerSelection)
+                console.log(humanScore);
+                console.log(computerScore);
+            }
+            if(humanScore > computerScore){
+                console.log(`The Winner is Human`);
+            }
+            else if(computerScore > humanScore){
+                console.log(`The Winner is Computer`);
+            }
+            else console.log("No winner");
+        }
+
+        playGame();
+        
     </script>
 </body>
 </html>
